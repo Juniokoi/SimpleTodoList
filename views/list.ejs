@@ -5,23 +5,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Todo List</title>
 </head>
 
 <body>
-  <h1>It's <%= day %>
-  </h1>
-  <ul>
+
+  <div class="box" id="heading">
+    <h1>
+      <%= listTitle %>
+    </h1>
+  </div>
+
+  <div class="box">
     <% for( let i=0; i < items.length; i++ ) { %>
-      <li>
-        <%= items[i] %>
-      </li>
+      <div class="item">
+        <input type="checkbox">
+        <p>
+          <%= items[i] %>
+        </p>
+      </div>
       <% } %>
-  </ul>
-  <form action="/" method="post">
-    <input type="text" name="newItem" required>
-    <button type="submit">Add</button>
-  </form>
+  </div>
+
+  <% if (listTitle !="Work List" ) { %>
+    <form action="/" method="post">
+  <% } else {%>
+        <form action="/Work" method="post">
+  <% } %>
+    <input type="text" name="newItem" placeholder="New item." autocomplete="off" required>
+    <button type="submit">+</button>
+  </form> 
 </body>
 
 </html>
