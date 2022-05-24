@@ -30,12 +30,12 @@
 
   <% if (listTitle !="Work List" ) { %>
     <form action="/" method="post">
-  <% } else {%>
+      <% } else {%>
         <form action="/Work" method="post">
-  <% } %>
-    <input type="text" name="newItem" placeholder="New item." autocomplete="off" required>
-    <button type="submit">+</button>
-  </form> 
+          <% } %>
+            <input type="text" name="newItem" placeholder="New item." autocomplete="off" required>
+            <button type="submit">+</button>
+        </form>
 </body>
 
 </html>
